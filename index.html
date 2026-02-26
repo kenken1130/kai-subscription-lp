@@ -134,9 +134,62 @@ section{padding:5rem 1.5rem}
 footer{text-align:center;padding:2rem;color:#555;font-size:.8rem;border-top:1px solid #1a1a1a}
 
 @media(max-width:768px){
-  .hero-inner{flex-direction:column-reverse;text-align:center}
+  .hero{min-height:auto;padding:4rem 1.2rem 5rem}
+  .hero-inner{flex-direction:column-reverse;text-align:center;gap:2rem}
   .hero-photo{flex:0 0 auto}
-  .hero-photo img{width:180px;height:180px}
+  .hero-photo img{width:150px;height:150px}
+  .hero h1{font-size:1.6rem}
+  .hero .sub{font-size:.95rem;line-height:1.9}
+  .badge{font-size:.75rem;padding:.35rem 1rem}
+  .cta-btn{font-size:1rem;padding:.9rem 2rem;width:100%;text-align:center;display:block}
+
+  section{padding:3.5rem 1.2rem}
+  .section-title{font-size:1.3rem}
+  .section-sub{font-size:.88rem;margin-bottom:2rem}
+
+  .problem-grid{grid-template-columns:1fr 1fr;gap:1rem}
+  .problem-card{padding:1.5rem 1rem}
+  .problem-card .icon{font-size:2rem;margin-bottom:.6rem}
+  .problem-card p{font-size:.82rem}
+
+  .solution{padding:2.5rem 1.2rem}
+  .solution h2{font-size:1.2rem}
+
+  .how-cards{grid-template-columns:1fr;gap:1rem}
+  .how-card{padding:1.5rem}
+
+  .chat-tabs{gap:.4rem}
+  .chat-tab{padding:.4rem .8rem;font-size:.72rem}
+  .chat-body{min-height:300px}
+  .msg-r,.msg-l{font-size:.82rem;padding:.6rem .9rem;max-width:85%}
+
+  .result-grid{grid-template-columns:1fr;gap:.8rem}
+  .result-card{padding:1.2rem}
+  .category-label{margin:2rem 0 .8rem;font-size:.8rem}
+
+  .service-list{grid-template-columns:1fr;gap:1rem}
+  .service-item{padding:1.2rem}
+
+  .pricing-card{padding:2rem 1.5rem}
+  .price{font-size:2.2rem}
+  .compare{padding:1rem}
+  .compare-row{font-size:.8rem}
+  .compare-row.highlight{font-size:.9rem}
+
+  .flow-step .num{width:40px;height:40px;font-size:1rem}
+
+  .faq-q{padding:1rem 1.2rem;font-size:.85rem}
+
+  .final-cta{padding:4rem 1.2rem}
+  .final-cta h2{font-size:1.2rem}
+  .slots{font-size:1rem}
+}
+
+@media(max-width:380px){
+  .problem-grid{grid-template-columns:1fr}
+  .hero-photo img{width:120px;height:120px}
+  .hero h1{font-size:1.4rem}
+  .chat-tab{font-size:.68rem;padding:.35rem .6rem}
 }
 </style>
 </head>
