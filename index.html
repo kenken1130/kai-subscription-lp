@@ -9,152 +9,129 @@
 <meta property="og:description" content="AIを使いたいけど時間がない社長へ。チャットで頼むだけ。月額5万円で専属AI参謀がつきます。先着20組。">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --navy:#1a2744;
-  --navy-dark:#0f1a2e;
-  --navy-light:#2a3f66;
-  --blue:#3b82f6;
-  --blue-light:#60a5fa;
-  --gold:#d4a853;
-  --white:#ffffff;
-  --gray50:#f8fafc;
-  --gray100:#f1f5f9;
-  --gray200:#e2e8f0;
-  --gray400:#94a3b8;
-  --gray600:#475569;
-  --gray800:#1e293b;
-  --text:#1e293b;
-  --text2:#64748b;
-}
+:root{--bg:#0a0a0a;--bg2:#111;--bg3:#1a1a1a;--text:#f0f0f0;--text2:#999;--blue:#2080E0;--blue-light:#60a0ff;--gold:#FFD700;--gradient:linear-gradient(135deg,#2080E0,#60a0ff)}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans JP','Inter',sans-serif;background:var(--white);color:var(--text);line-height:1.8;overflow-x:hidden}
+body{font-family:'Noto Sans JP','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
 a{color:var(--blue);text-decoration:none}
-
-.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
 .fade-in.visible{opacity:1;transform:translateY(0)}
 
 /* Hero */
-.hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 50%,var(--navy-light) 100%);color:#fff;padding:2rem;position:relative;overflow:hidden}
-.hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:80px;background:var(--white);clip-path:ellipse(55% 100% at 50% 100%)}
-.hero-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:3rem;flex-wrap:wrap;position:relative;z-index:1}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 50% 50%,rgba(32,128,224,.08) 0%,transparent 60%);animation:pulse 8s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.hero-inner{position:relative;z-index:1;max-width:1000px;display:flex;align-items:center;gap:3rem;flex-wrap:wrap}
 .hero-text{flex:1;min-width:300px}
-.hero-photo{flex:0 0 280px;text-align:center}
-.hero-photo img{width:240px;height:240px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,.2);box-shadow:0 20px 40px rgba(0,0,0,.3)}
-.hero-photo .name{margin-top:1rem;font-weight:700;font-size:1.1rem}
-.hero-photo .title{font-size:.85rem;color:rgba(255,255,255,.7)}
-.badge{display:inline-block;background:var(--gold);color:var(--navy-dark);font-weight:700;font-size:.8rem;padding:.4rem 1.2rem;border-radius:50px;margin-bottom:1.5rem;letter-spacing:.05em}
-.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.4;margin-bottom:1.2rem}
-.hero .sub{font-size:clamp(.95rem,2vw,1.15rem);color:rgba(255,255,255,.85);margin-bottom:2rem;line-height:2}
-.hero .sub strong{color:#fff}
-.cta-btn{display:inline-block;background:var(--blue);color:#fff;font-weight:700;font-size:1.05rem;padding:.9rem 2.5rem;border-radius:8px;transition:all .3s;box-shadow:0 4px 14px rgba(59,130,246,.4)}
-.cta-btn:hover{background:var(--blue-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(59,130,246,.5)}
+.hero-photo{flex:0 0 260px;text-align:center}
+.hero-photo img{width:220px;height:220px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid rgba(32,128,224,.4);box-shadow:0 0 40px rgba(32,128,224,.2)}
+.hero-photo .name{margin-top:1rem;font-weight:700;font-size:1rem}
+.hero-photo .title{font-size:.8rem;color:var(--text2)}
+.badge{display:inline-block;background:linear-gradient(135deg,var(--gold),#ffaa00);color:#000;font-weight:700;font-size:.85rem;padding:.4rem 1.2rem;border-radius:50px;margin-bottom:1.5rem;letter-spacing:.05em}
+.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.4;margin-bottom:1rem;background:linear-gradient(135deg,#fff,#ccc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{font-size:clamp(.95rem,2.2vw,1.15rem);color:var(--text2);margin-bottom:2.5rem;line-height:2}
+.hero .sub strong{color:var(--text)}
+.cta-btn{display:inline-block;background:var(--gradient);color:#fff;font-weight:700;font-size:1.05rem;padding:1rem 2.5rem;border-radius:60px;transition:all .3s;box-shadow:0 4px 30px rgba(32,128,224,.4)}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(32,128,224,.6)}
 
-/* Sections */
 section{padding:5rem 1.5rem}
 .container{max-width:960px;margin:0 auto}
-.section-title{font-size:clamp(1.4rem,3.5vw,2rem);font-weight:900;text-align:center;margin-bottom:.6rem;color:var(--navy)}
+.section-title{font-size:clamp(1.4rem,3.5vw,2rem);font-weight:900;text-align:center;margin-bottom:.6rem}
 .section-sub{text-align:center;color:var(--text2);margin-bottom:3rem;font-size:.95rem}
+.accent{color:var(--blue)}
+.gold{color:var(--gold)}
 
 /* Problems */
-.problems{background:var(--gray50)}
+.problems{background:var(--bg2)}
 .problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem}
-.problem-card{background:var(--white);border:1px solid var(--gray200);border-radius:16px;padding:2rem 1.5rem;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.problem-card{background:var(--bg3);border:1px solid #222;border-radius:16px;padding:2rem 1.5rem;text-align:center}
 .problem-card .icon{font-size:2.5rem;margin-bottom:1rem}
 .problem-card p{color:var(--text2);font-size:.9rem;line-height:1.7}
 
-/* Solution banner */
-.solution-banner{background:var(--navy);color:#fff;text-align:center;padding:3rem 1.5rem}
-.solution-banner h2{font-size:clamp(1.3rem,3.5vw,1.8rem);font-weight:900;margin-bottom:.5rem}
-.solution-banner p{color:rgba(255,255,255,.8);font-size:1rem}
+/* Solution */
+.solution{background:linear-gradient(135deg,#0d1b2a,#1b2838);text-align:center;padding:3.5rem 1.5rem;border-top:1px solid #1a2744;border-bottom:1px solid #1a2744}
+.solution h2{font-size:clamp(1.3rem,3.5vw,1.8rem);font-weight:900;margin-bottom:.5rem}
+.solution p{color:var(--text2);font-size:1rem}
 
-/* How it works */
-.how-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
-.how-card{background:var(--white);border:1px solid var(--gray200);border-radius:16px;padding:2rem;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.how-card .step{display:inline-block;background:var(--blue);color:#fff;font-weight:900;font-size:.85rem;width:32px;height:32px;line-height:32px;text-align:center;border-radius:50%;margin-bottom:1rem}
-.how-card h4{font-size:1.05rem;font-weight:700;margin-bottom:.5rem;color:var(--navy)}
-.how-card p{font-size:.9rem;color:var(--text2)}
+/* How */
+.how-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.how-card{background:var(--bg2);border:1px solid #222;border-radius:16px;padding:2rem}
+.how-card .step{display:inline-block;background:var(--gradient);color:#fff;font-weight:900;font-size:.85rem;width:32px;height:32px;line-height:32px;text-align:center;border-radius:50%;margin-bottom:1rem}
+.how-card h4{font-size:1rem;margin-bottom:.5rem}
+.how-card p{font-size:.88rem;color:var(--text2)}
 
-/* Chat Demo */
-.chat-section{background:var(--gray50)}
-.chat-tabs{display:flex;gap:.5rem;justify-content:center;margin-bottom:2rem;flex-wrap:wrap}
-.chat-tab{background:var(--white);color:var(--text2);border:1px solid var(--gray200);padding:.5rem 1rem;border-radius:50px;cursor:pointer;font-size:.8rem;font-weight:600;transition:all .2s}
-.chat-tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-.chat-phone{background:var(--navy-dark);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);max-width:480px;margin:0 auto}
-.chat-header{background:var(--navy);padding:1rem 1.2rem;display:flex;align-items:center;gap:.8rem}
-.chat-header .avatar{width:40px;height:40px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#fff}
-.chat-header .name{font-weight:600;font-size:.9rem;color:#fff}
-.chat-header .status{font-size:.75rem;color:rgba(255,255,255,.6)}
+/* Chat */
+.chat-section{background:var(--bg2)}
+.chat-tabs{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.chat-tab{background:var(--bg3);color:var(--text2);border:1px solid #333;padding:.5rem 1rem;border-radius:50px;cursor:pointer;font-size:.8rem;font-weight:600;transition:all .2s}
+.chat-tab.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.chat-phone{background:#0e1621;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);max-width:480px;margin:0 auto}
+.chat-header{background:#17212b;padding:1rem 1.2rem;display:flex;align-items:center;gap:.8rem;border-bottom:1px solid #1e2c3a}
+.chat-header .av{width:40px;height:40px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
 .chat-body{padding:1rem;min-height:360px}
-.msg-r{align-self:flex-end;background:var(--blue);color:#fff;padding:.7rem 1rem;border-radius:14px 14px 4px 14px;max-width:80%;font-size:.85rem;line-height:1.6}
-.msg-l{align-self:flex-start;background:rgba(255,255,255,.1);color:#fff;padding:.7rem 1rem;border-radius:14px 14px 14px 4px;max-width:80%;font-size:.85rem;line-height:1.6}
 .chat-content{display:flex;flex-direction:column;gap:.8rem}
-.chat-note{text-align:center;color:rgba(255,255,255,.4);font-size:.7rem;margin-top:.5rem}
+.msg-r{align-self:flex-end;background:#2b5278;color:#fff;padding:.7rem 1rem;border-radius:14px 14px 4px 14px;max-width:80%;font-size:.85rem;line-height:1.6}
+.msg-l{align-self:flex-start;background:#182533;color:#fff;padding:.7rem 1rem;border-radius:14px 14px 14px 4px;max-width:80%;font-size:.85rem;line-height:1.6}
+.chat-note{text-align:center;color:#6d8da6;font-size:.7rem;margin-top:.5rem}
 
 /* Results */
-.results-header{text-align:center;margin-bottom:2rem}
-.big-number{font-size:clamp(3rem,8vw,5rem);font-weight:900;color:var(--blue)}
-.category-label{font-size:.85rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;margin:2rem 0 1rem;padding-left:.5rem;border-left:3px solid var(--gold)}
+.results-header{text-align:center;margin-bottom:1rem}
+.big-number{font-size:clamp(3rem,8vw,5rem);font-weight:900;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.category-label{font-size:.85rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;margin:2.5rem 0 1rem;padding-left:.5rem;border-left:3px solid var(--gold)}
 .result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
-.result-card{background:var(--gray50);border:1px solid var(--gray200);border-radius:12px;padding:1.5rem;transition:all .3s}
-.result-card:hover{border-color:var(--blue);box-shadow:0 4px 16px rgba(59,130,246,.1)}
+.result-card{background:var(--bg2);border:1px solid #222;border-radius:12px;padding:1.5rem;transition:border-color .3s,transform .3s}
+.result-card:hover{border-color:var(--blue);transform:translateY(-2px)}
 .result-card .emoji{font-size:1.4rem;margin-bottom:.5rem}
-.result-card h4{font-size:.95rem;margin-bottom:.3rem;color:var(--navy)}
+.result-card h4{font-size:.95rem;margin-bottom:.3rem}
 .result-card p{font-size:.85rem;color:var(--text2)}
-.result-card a{font-size:.8rem;color:var(--blue)}
+.result-card a{font-size:.8rem}
 
 /* Service */
-.service{background:var(--gray50)}
+.service{background:var(--bg2)}
 .service-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin-bottom:2rem}
-.service-item{display:flex;align-items:flex-start;gap:1rem;background:var(--white);padding:1.5rem;border-radius:12px;border:1px solid var(--gray200)}
+.service-item{display:flex;align-items:flex-start;gap:1rem;background:var(--bg3);padding:1.5rem;border-radius:12px}
 .service-item .icon{font-size:1.4rem;flex-shrink:0;margin-top:.2rem}
-.service-item h4{font-size:.9rem;margin-bottom:.3rem;color:var(--navy)}
+.service-item h4{font-size:.9rem;margin-bottom:.3rem}
 .service-item p{font-size:.85rem;color:var(--text2)}
 
 /* Pricing */
-.pricing-card{max-width:480px;margin:0 auto;background:var(--white);border:2px solid var(--navy);border-radius:20px;padding:2.5rem 2rem;text-align:center;position:relative;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.08)}
-.pricing-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--navy),var(--blue))}
-.pricing-card .limit-badge{display:inline-block;background:rgba(212,168,83,.15);border:1px solid var(--gold);color:var(--gold);font-weight:700;padding:.4rem 1.2rem;border-radius:50px;margin-bottom:1.5rem;font-size:.9rem}
-.pricing-card .old-price{font-size:1.1rem;color:var(--text2);text-decoration:line-through;margin-bottom:.3rem}
-.pricing-card .price{font-size:clamp(2.2rem,6vw,3rem);font-weight:900;color:var(--navy)}
-.pricing-card .price span{font-size:.9rem;font-weight:400;color:var(--text2)}
-.pricing-card .tax{font-size:.85rem;color:var(--text2);margin-bottom:1.5rem}
-.compare{display:flex;flex-direction:column;gap:.6rem;text-align:left;margin:1.5rem 0 2rem;padding:1.5rem;background:var(--gray50);border-radius:12px}
-.compare-row{display:flex;justify-content:space-between;align-items:center;font-size:.85rem}
+.pricing-card{max-width:480px;margin:0 auto;background:linear-gradient(145deg,#111,#1a1a1a);border:2px solid var(--gold);border-radius:24px;padding:2.5rem 2rem;text-align:center;position:relative;overflow:hidden}
+.pricing-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--blue),var(--gold))}
+.limit-badge{display:inline-block;background:rgba(255,215,0,.15);border:1px solid var(--gold);color:var(--gold);font-weight:700;padding:.4rem 1.2rem;border-radius:50px;margin-bottom:1.5rem;font-size:.9rem}
+.old-price{font-size:1.1rem;color:var(--text2);text-decoration:line-through;margin-bottom:.3rem}
+.price{font-size:clamp(2.2rem,6vw,3rem);font-weight:900;color:var(--gold)}
+.price span{font-size:.9rem;font-weight:400;color:var(--text2)}
+.tax{font-size:.85rem;color:var(--text2);margin-bottom:1.5rem}
+.compare{display:flex;flex-direction:column;gap:.6rem;text-align:left;margin:1.5rem 0 2rem;padding:1.5rem;background:rgba(255,255,255,.03);border-radius:12px}
+.compare-row{display:flex;justify-content:space-between;font-size:.85rem}
 .compare-row.old{color:var(--text2);text-decoration:line-through}
-.compare-row.highlight{color:var(--navy);font-weight:700;font-size:1rem}
+.compare-row.highlight{color:var(--gold);font-weight:700;font-size:1rem}
 
 /* Flow */
-.flow{background:var(--gray50)}
+.flow{background:var(--bg2)}
 .flow-steps{display:flex;flex-direction:column;gap:2rem;max-width:560px;margin:0 auto}
 .flow-step{display:flex;gap:1.5rem;align-items:flex-start}
-.flow-step .num{flex-shrink:0;width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem}
-.flow-step .content h4{margin-bottom:.3rem;color:var(--navy)}
-.flow-step .content p{font-size:.9rem;color:var(--text2)}
+.flow-step .num{flex-shrink:0;width:48px;height:48px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem}
 
 /* FAQ */
-.faq-section{background:var(--white)}
+.faq{background:var(--bg)}
 .faq-list{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:.8rem}
-.faq-item{background:var(--gray50);border:1px solid var(--gray200);border-radius:12px;overflow:hidden}
-.faq-q{padding:1.2rem 1.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:.9rem;color:var(--navy)}
+.faq-item{background:var(--bg2);border:1px solid #222;border-radius:12px;overflow:hidden}
+.faq-q{padding:1.2rem 1.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:.9rem}
 .faq-q::after{content:'+';font-size:1.3rem;color:var(--blue);transition:transform .3s}
 .faq-item.open .faq-q::after{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 1.5rem}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s;padding:0 1.5rem}
 .faq-item.open .faq-a{max-height:300px;padding:0 1.5rem 1.2rem}
 .faq-a p{font-size:.9rem;color:var(--text2);line-height:1.8}
 
 /* Final CTA */
-.final-cta{text-align:center;padding:5rem 1.5rem;background:var(--navy);color:#fff}
+.final-cta{text-align:center;padding:6rem 1.5rem;background:radial-gradient(ellipse at center,rgba(32,128,224,.1) 0%,transparent 70%)}
 .final-cta h2{font-size:clamp(1.3rem,3.5vw,2rem);font-weight:900;margin-bottom:1rem;line-height:1.6}
-.final-cta .accent{color:var(--blue-light)}
-.final-cta p{color:rgba(255,255,255,.7);margin-bottom:1.5rem;font-size:1rem}
 .slots{font-size:1.1rem;color:var(--gold);font-weight:700;margin-bottom:2rem}
-.cta-btn-white{display:inline-block;background:#fff;color:var(--navy);font-weight:700;font-size:1.1rem;padding:1rem 3rem;border-radius:8px;transition:all .3s;box-shadow:0 4px 14px rgba(0,0,0,.2)}
-.cta-btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
 
-footer{text-align:center;padding:2rem;color:var(--gray400);font-size:.8rem;border-top:1px solid var(--gray200)}
+footer{text-align:center;padding:2rem;color:#555;font-size:.8rem;border-top:1px solid #1a1a1a}
 
 @media(max-width:768px){
   .hero-inner{flex-direction:column-reverse;text-align:center}
@@ -179,7 +156,7 @@ footer{text-align:center;padding:2rem;color:var(--gray400);font-size:.8rem;borde
       <a href="https://t.me/ken1130" class="cta-btn">まずは無料で相談する →</a>
     </div>
     <div class="hero-photo fade-in">
-      <img src="profile.jpg" alt="小松 賢" onerror="this.style.background='linear-gradient(135deg,#3b82f6,#1a2744)';this.style.display='flex';this.alt='K';this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 240 240%22><rect fill=%22%231a2744%22 width=%22240%22 height=%22240%22/><text x=%2250%%22 y=%2255%%22 font-size=%2280%22 fill=%22white%22 text-anchor=%22middle%22 font-family=%22sans-serif%22>K</text></svg>'">
+      <img src="profile.jpg" alt="小松 賢">
       <div class="name">小松 賢（Ken Komatsu）</div>
       <div class="title">Wonderwall Inc. CEO / 連続起業家</div>
     </div>
@@ -200,33 +177,21 @@ footer{text-align:center;padding:2rem;color:var(--gray400);font-size:.8rem;borde
   </div>
 </section>
 
-<!-- Solution Banner -->
-<section class="solution-banner">
-  <h2>自分でAIを学ぶ必要は、ありません。</h2>
-  <p>社長がやるべきは「経営判断」。AIの操作は、プロに任せてください。</p>
+<!-- Solution -->
+<section class="solution">
+  <h2 class="fade-in">自分でAIを学ぶ必要は、<span class="gold">ありません。</span></h2>
+  <p class="fade-in">社長がやるべきは「経営判断」。AIの操作は、プロに任せてください。</p>
 </section>
 
-<!-- How it works -->
+<!-- How -->
 <section>
   <div class="container">
-    <h2 class="section-title fade-in">使い方は、驚くほど簡単です</h2>
+    <h2 class="section-title fade-in">使い方は、驚くほど<span class="accent">簡単</span>です</h2>
     <p class="section-sub fade-in">スマホでメッセージを送るだけ。それだけで動きます。</p>
     <div class="how-cards">
-      <div class="how-card fade-in">
-        <div class="step">1</div>
-        <h4>チャットで依頼</h4>
-        <p>「来週のプレゼン資料作って」「競合調べて」— LINEのように送るだけ。専門知識は不要です。</p>
-      </div>
-      <div class="how-card fade-in">
-        <div class="step">2</div>
-        <h4>AIが即座に実行</h4>
-        <p>リサーチ、資料作成、データ分析。人間なら数日かかる作業を、数十分で完了します。</p>
-      </div>
-      <div class="how-card fade-in">
-        <div class="step">3</div>
-        <h4>結果を受け取る</h4>
-        <p>完成した資料やレポートがチャットに届きます。確認してOKを出すだけ。</p>
-      </div>
+      <div class="how-card fade-in"><div class="step">1</div><h4>チャットで依頼</h4><p>「来週のプレゼン資料作って」「競合調べて」— 普段の言葉で送るだけ。専門知識は不要。</p></div>
+      <div class="how-card fade-in"><div class="step">2</div><h4>AIが即座に実行</h4><p>リサーチ、資料作成、データ分析。人間なら数日かかる作業を、数十分で完了。</p></div>
+      <div class="how-card fade-in"><div class="step">3</div><h4>結果を受け取る</h4><p>完成した資料やレポートがチャットに届きます。確認してOKを出すだけ。</p></div>
     </div>
   </div>
 </section>
@@ -234,9 +199,8 @@ footer{text-align:center;padding:2rem;color:var(--gray400);font-size:.8rem;borde
 <!-- Chat Demo -->
 <section class="chat-section">
   <div class="container">
-    <h2 class="section-title fade-in">実際の<span style="color:var(--blue)">やり取り</span>イメージ</h2>
+    <h2 class="section-title fade-in">実際の<span class="accent">やり取り</span>イメージ</h2>
     <p class="section-sub fade-in">難しい操作は一切なし。こんな感じでチャットするだけです。</p>
-
     <div class="chat-tabs fade-in">
       <button class="chat-tab active" data-chat="1">💼 資料作成</button>
       <button class="chat-tab" data-chat="2">🔍 リサーチ</button>
@@ -244,16 +208,15 @@ footer{text-align:center;padding:2rem;color:var(--gray400);font-size:.8rem;borde
       <button class="chat-tab" data-chat="4">🛠 業務改善</button>
       <button class="chat-tab" data-chat="5">☀️ 朝の報告</button>
     </div>
-
     <div class="chat-phone fade-in">
       <div class="chat-header">
-        <div class="avatar">⚡</div>
-        <div><div class="name">Kai × あなた</div><div class="status">オンライン</div></div>
+        <div class="av">⚡</div>
+        <div><div style="font-weight:600;font-size:.9rem;color:#fff">Kai × あなた</div><div style="font-size:.75rem;color:#6d8da6">オンライン</div></div>
       </div>
       <div class="chat-body">
         <div class="chat-content" data-chat="1">
           <div class="msg-r">来週の銀行向けの事業計画書、作ってくれない？うちの数字はNotionにあるやつ使って</div>
-          <div class="msg-l">了解です ⚡ Notionの数字をベースに作りますね。<br><br>構成：<br>1. 事業概要<br>2. 市場分析<br>3. 売上計画<br>4. 資金使途<br>5. 返済計画<br><br>30分で仕上げます。</div>
+          <div class="msg-l">了解です ⚡ Notionの数字ベースで作りますね。<br><br>構成：<br>1. 事業概要<br>2. 市場分析<br>3. 売上計画<br>4. 資金使途<br>5. 返済計画<br><br>30分で仕上げます。</div>
           <div class="msg-r">頼んだ🙏</div>
           <div class="msg-l">完成しました 👇<br><br>📄 事業計画書（PDF）<br><br>銀行向けのトーンで作ってあります。修正があればお気軽に。</div>
           <div class="chat-note">↑ 依頼から30分で納品</div>
@@ -261,25 +224,25 @@ footer{text-align:center;padding:2rem;color:var(--gray400);font-size:.8rem;borde
         <div class="chat-content" data-chat="2" style="display:none">
           <div class="msg-r">うちの業界で最近伸びてる会社ある？動向まとめてほしい</div>
           <div class="msg-l">調べますね ⚡</div>
-          <div class="msg-l">まとめました 👇<br><br>📊 業界動向レポート<br><br>■ 注目企業5社<br>・A社: AI導入で売上2倍<br>・B社: サブスクモデルに転換<br>・C社: 海外展開で急成長<br><br>■ 御社へのヒント<br>→ サブスク型への移行が業界トレンド<br><br>詳細はPDFにまとめました。</div>
+          <div class="msg-l">まとめました 👇<br><br>📊 業界動向レポート<br><br>■ 注目企業5社の分析<br>■ トレンド: サブスク型への移行<br>■ 御社への提案3つ<br><br>詳細PDFにまとめました。</div>
           <div class="msg-r">これ助かる！会議で使うわ</div>
           <div class="chat-note">↑ 業界レポートを40分で作成</div>
         </div>
         <div class="chat-content" data-chat="3" style="display:none">
           <div class="msg-r">今月キャッシュが厳しい。何かいい手ないかな</div>
-          <div class="msg-l">状況整理しますね。<br><br>💰 御社の現状：<br>・月商: 約500万<br>・固定費: 約400万<br>・余裕: 約100万<br><br>🎯 即効性のある打ち手：<br><br>①【今週】既存顧客にアップセル提案<br>→ 追加サービス月5万×10社 = +50万<br><br>②【来月】補助金申請（IT導入補助金）<br>→ 最大450万円<br><br>③【今月】支払いサイト見直し交渉<br>→ キャッシュフロー改善<br><br>①から始めましょうか？提案書作ります。</div>
+          <div class="msg-l">状況整理しますね。<br><br>🎯 即効性のある打ち手：<br><br>①既存顧客にアップセル提案<br>→ 月5万×10社 = +50万<br><br>②IT導入補助金を申請<br>→ 最大450万円<br><br>③支払いサイト見直し交渉<br><br>①から始めましょうか？提案書作ります。</div>
           <div class="msg-r">①やろう。提案書頼む</div>
           <div class="chat-note">↑ 相談から具体策まで5分</div>
         </div>
         <div class="chat-content" data-chat="4" style="display:none">
-          <div class="msg-r">うちの店舗のシフト管理、まだ紙でやってるんだけど、なんとかならない？</div>
-          <div class="msg-l">できますよ ⚡<br><br>📱 こんなアプリ作れます：<br>・スタッフがスマホから希望提出<br>・AIが最適シフトを自動作成<br>・確定したらLINEで通知<br><br>費用ゼロで作れます。やりますか？</div>
+          <div class="msg-r">うちの店のシフト管理、まだ紙なんだけど、なんとかならない？</div>
+          <div class="msg-l">できますよ ⚡<br><br>📱 スタッフがスマホから希望提出<br>→ AIが最適シフト自動作成<br>→ 確定したら通知<br><br>費用ゼロで作れます。やりますか？</div>
           <div class="msg-r">え、マジで？やって！</div>
-          <div class="msg-l">できました 🎉<br><br>🔗 アプリURL<br><br>スタッフさんにURL送るだけで使えます。費用はかかりません。</div>
+          <div class="msg-l">できました 🎉<br><br>🔗 アプリURL<br><br>スタッフにURL送るだけで使えます。</div>
           <div class="chat-note">↑ 相談から2時間でアプリ完成</div>
         </div>
         <div class="chat-content" data-chat="5" style="display:none">
-          <div class="msg-l">☀️ おはようございます。<br>本日のご報告です。<br><br>📅 <strong>本日の予定</strong><br>・10:00 A社との商談（Zoom）<br>・14:00 税理士面談（事務所）<br>・17:00 社員面談<br><br>✅ <strong>対応が必要なタスク</strong><br>・見積書の返送（A社、今日中）<br>・契約書の確認（B社）<br><br>📧 <strong>重要メール</strong><br>・銀行から融資審査の結果 → ご確認ください<br>・補助金事務局から書類不備の連絡<br><br>銀行の件、返信ドラフト作りましょうか？</div>
+          <div class="msg-l">☀️ おはようございます。<br>本日のご報告です。<br><br>📅 <strong>本日の予定</strong><br>・10:00 A社との商談<br>・14:00 税理士面談<br>・17:00 社員面談<br><br>✅ <strong>対応が必要なタスク</strong><br>・見積書の返送（今日中）<br>・契約書の確認<br><br>📧 <strong>重要メール</strong><br>・銀行から融資審査の結果<br><br>銀行の件、返信ドラフト作りましょうか？</div>
           <div class="msg-r">ありがとう。銀行の返信お願い</div>
           <div class="chat-note">↑ 毎朝8時に自動で届きます</div>
         </div>
@@ -293,19 +256,17 @@ footer{text-align:center;padding:2rem;color:var(--gray400);font-size:.8rem;borde
   <div class="container">
     <div class="results-header fade-in">
       <div class="big-number">15</div>
-      <h2 class="section-title">の仕事を、<span style="color:var(--gold)">たった2日</span>で完了。</h2>
+      <h2 class="section-title">の仕事を、<span class="gold">たった2日</span>で完了。</h2>
       <p class="section-sub">「これ全部やってくれるの？」— はい、やります。</p>
     </div>
-
     <div class="category-label fade-in">🛠 プロダクト開発</div>
     <div class="result-grid">
-      <div class="result-card fade-in"><div class="emoji">📱</div><h4>シフト管理アプリ</h4><p>店舗向け。AIスケジューリング機能付き。即日完成。</p><a href="https://kenken1130.github.io/shift-manager/" target="_blank">デモを見る →</a></div>
-      <div class="result-card fade-in"><div class="emoji">🤖</div><h4>AIマッチングBot</h4><p>対話型AI Bot。オンボーディング、プッシュ通知、管理機能。</p></div>
-      <div class="result-card fade-in"><div class="emoji">🎤</div><h4>プレゼンスライド</h4><p>インタラクティブHTML。URLを共有するだけでプレゼン。</p><a href="https://kenken1130.github.io/ai-seminar-slides/" target="_blank">デモを見る →</a></div>
+      <div class="result-card fade-in"><div class="emoji">📱</div><h4>シフト管理アプリ</h4><p>店舗向け。AIスケジューリング付き。即日完成。</p><a href="https://kenken1130.github.io/shift-manager/" target="_blank">デモを見る →</a></div>
+      <div class="result-card fade-in"><div class="emoji">🤖</div><h4>AIマッチングBot</h4><p>対話型AI Bot。プッシュ通知、管理機能付き。</p></div>
+      <div class="result-card fade-in"><div class="emoji">🎤</div><h4>プレゼンスライド</h4><p>インタラクティブHTML。URL共有で即プレゼン。</p><a href="https://kenken1130.github.io/ai-seminar-slides/" target="_blank">デモを見る →</a></div>
       <div class="result-card fade-in"><div class="emoji">📊</div><h4>投資家向けピッチデッキ</h4><p>PDF→インタラクティブHTML化。</p><a href="https://kenken1130.github.io/golfin-pitch-deck/" target="_blank">デモを見る →</a></div>
-      <div class="result-card fade-in"><div class="emoji">🎨</div><h4>販促物デザイン</h4><p>ステッカー・カード等、複数パターン作成。</p></div>
+      <div class="result-card fade-in"><div class="emoji">🎨</div><h4>販促物デザイン</h4><p>ステッカー・カード等。複数パターン作成。</p></div>
     </div>
-
     <div class="category-label fade-in">📈 経営・戦略</div>
     <div class="result-grid">
       <div class="result-card fade-in"><div class="emoji">💹</div><h4>売上予測モデル</h4><p>6ヶ月先までのMRR予測。数値根拠付き。</p></div>
@@ -314,11 +275,10 @@ footer{text-align:center;padding:2rem;color:var(--gray400);font-size:.8rem;borde
       <div class="result-card fade-in"><div class="emoji">⚖️</div><h4>法務チェック</h4><p>契約確認、法規制調査、リスク整理。</p></div>
       <div class="result-card fade-in"><div class="emoji">📝</div><h4>訴訟対応サポート</h4><p>訴状分析、答弁書ドラフト作成。</p></div>
     </div>
-
     <div class="category-label fade-in">🔧 業務自動化</div>
     <div class="result-grid">
       <div class="result-card fade-in"><div class="emoji">🔗</div><h4>Google連携</h4><p>カレンダー・メール・タスクをAIが自動監視。</p></div>
-      <div class="result-card fade-in"><div class="emoji">🗄️</div><h4>業務DB構築</h4><p>タスク管理・顧客管理・営業管理を一元化。</p></div>
+      <div class="result-card fade-in"><div class="emoji">🗄️</div><h4>業務DB構築</h4><p>タスク・顧客・営業管理を一元化。</p></div>
       <div class="result-card fade-in"><div class="emoji">☀️</div><h4>朝のブリーフィング</h4><p>毎朝8時に予定+タスク+メール要約が届く。</p></div>
       <div class="result-card fade-in"><div class="emoji">💬</div><h4>自動応答システム</h4><p>複数グループの問い合わせをAIが対応。</p></div>
       <div class="result-card fade-in"><div class="emoji">🏗️</div><h4>開発支援</h4><p>デザイン連携、品質管理パイプライン構築。</p></div>
@@ -332,13 +292,13 @@ footer{text-align:center;padding:2rem;color:var(--gray400);font-size:.8rem;borde
     <h2 class="section-title fade-in">社長の「やりたいけどできてない」を<br>全部やります</h2>
     <p class="section-sub fade-in">チャットで指示するだけ。あとは全部お任せください。</p>
     <div class="service-list">
-      <div class="service-item fade-in"><div class="icon">🔍</div><div><h4>リサーチ・調査</h4><p>競合分析、市場調査、技術調査。ネットで調べる作業はすべて代行。</p></div></div>
-      <div class="service-item fade-in"><div class="icon">📊</div><div><h4>資料・企画書作成</h4><p>事業計画、提案書、プレゼン資料。銀行・投資家向けも対応。</p></div></div>
-      <div class="service-item fade-in"><div class="icon">🌐</div><div><h4>ホームページ・LP制作</h4><p>このLPもAIが作りました。即日公開。修正も即対応。</p></div></div>
-      <div class="service-item fade-in"><div class="icon">✅</div><div><h4>タスク・スケジュール管理</h4><p>予定の確認、リマインド、期限管理。毎朝ブリーフィング配信。</p></div></div>
-      <div class="service-item fade-in"><div class="icon">📧</div><div><h4>メール対応</h4><p>重要メールの通知、返信ドラフト作成。見落としゼロに。</p></div></div>
+      <div class="service-item fade-in"><div class="icon">🔍</div><div><h4>リサーチ・調査</h4><p>競合分析、市場調査。ネットで調べる作業はすべて代行。</p></div></div>
+      <div class="service-item fade-in"><div class="icon">📊</div><div><h4>資料・企画書作成</h4><p>事業計画、提案書、プレゼン資料。銀行・投資家向けも。</p></div></div>
+      <div class="service-item fade-in"><div class="icon">🌐</div><div><h4>HP・LP制作</h4><p>このLPもAIが作りました。即日公開。</p></div></div>
+      <div class="service-item fade-in"><div class="icon">✅</div><div><h4>タスク・スケジュール管理</h4><p>毎朝ブリーフィング配信。予定・タスク・メールを一元管理。</p></div></div>
+      <div class="service-item fade-in"><div class="icon">📧</div><div><h4>メール対応</h4><p>重要メール通知、返信ドラフト。見落としゼロに。</p></div></div>
       <div class="service-item fade-in"><div class="icon">📈</div><div><h4>経営数値・財務</h4><p>売上予測、キャッシュフロー分析、補助金リサーチ。</p></div></div>
-      <div class="service-item fade-in"><div class="icon">⚖️</div><div><h4>法務サポート</h4><p>契約書チェック、法務調査、各種書面のドラフト。</p></div></div>
+      <div class="service-item fade-in"><div class="icon">⚖️</div><div><h4>法務サポート</h4><p>契約書チェック、法務調査、各種書面ドラフト。</p></div></div>
       <div class="service-item fade-in"><div class="icon">🤖</div><div><h4>業務のIT化・自動化</h4><p>紙の業務をデジタル化。アプリやBotも作れます。</p></div></div>
     </div>
   </div>
@@ -348,7 +308,7 @@ footer{text-align:center;padding:2rem;color:var(--gray400);font-size:.8rem;borde
 <section>
   <div class="container">
     <h2 class="section-title fade-in">料金</h2>
-    <p class="section-sub fade-in">新入社員1人の<span style="color:var(--gold);font-weight:700">1/5以下</span>で、24時間働く右腕</p>
+    <p class="section-sub fade-in">新入社員1人の<span class="gold">1/5以下</span>で、24時間働く右腕</p>
     <div class="pricing-card fade-in">
       <div class="limit-badge">🔥 先着20組 モニター価格</div>
       <p class="old-price">通常価格 ¥100,000/月</p>
@@ -384,38 +344,17 @@ footer{text-align:center;padding:2rem;color:var(--gray400);font-size:.8rem;borde
 </section>
 
 <!-- FAQ -->
-<section class="faq-section">
+<section class="faq">
   <div class="container">
     <h2 class="section-title fade-in">よくあるご質問</h2>
     <div class="faq-list" style="margin-top:2rem">
-      <div class="faq-item fade-in">
-        <div class="faq-q">ITやAIに詳しくなくても使えますか？</div>
-        <div class="faq-a"><p>はい。チャットで日本語のメッセージを送るだけです。「資料作って」「調べて」と普段の言葉で指示するだけで、AIが全て対応します。パソコンの操作は不要です。</p></div>
-      </div>
-      <div class="faq-item fade-in">
-        <div class="faq-q">具体的にどんなことを頼めますか？</div>
-        <div class="faq-a"><p>リサーチ、資料作成、メール対応、競合調査、事業計画、ホームページ制作、業務の自動化、法務チェックなど。基本的に「デスクワーク全般」とお考えください。上記の実績15件がすべて実例です。</p></div>
-      </div>
-      <div class="faq-item fade-in">
-        <div class="faq-q">会社の情報を預けて大丈夫ですか？</div>
-        <div class="faq-a"><p>御社専用のグループで運用し、情報は他のお客様と一切共有しません。必要に応じてNDA（秘密保持契約）の締結も可能です。</p></div>
-      </div>
-      <div class="faq-item fade-in">
-        <div class="faq-q">対応時間は？</div>
-        <div class="faq-a"><p>24時間対応です。夜中の依頼でも、翌朝には結果が届きます。毎朝8時には、その日の予定・タスク・重要メールのブリーフィングが自動で届きます。</p></div>
-      </div>
-      <div class="faq-item fade-in">
-        <div class="faq-q">1日の依頼件数に制限はありますか？</div>
-        <div class="faq-a"><p>ありません。何件でもお気軽にどうぞ。</p></div>
-      </div>
-      <div class="faq-item fade-in">
-        <div class="faq-q">解約はいつでもできますか？</div>
-        <div class="faq-a"><p>はい。1ヶ月単位の契約で、いつでも解約可能です。違約金もありません。</p></div>
-      </div>
-      <div class="faq-item fade-in">
-        <div class="faq-q">AIだけで本当に大丈夫ですか？</div>
-        <div class="faq-a"><p>最新のAI（Claude）をベースに、17事業を立ち上げた経験を持つ起業家・小松が監修しています。AIの速度と、人間の経営判断力のハイブリッドです。</p></div>
-      </div>
+      <div class="faq-item fade-in"><div class="faq-q">ITやAIに詳しくなくても使えますか？</div><div class="faq-a"><p>はい。チャットで日本語のメッセージを送るだけです。「資料作って」「調べて」と普段の言葉で指示するだけ。パソコンの操作は不要です。</p></div></div>
+      <div class="faq-item fade-in"><div class="faq-q">具体的にどんなことを頼めますか？</div><div class="faq-a"><p>リサーチ、資料作成、メール対応、競合調査、事業計画、HP制作、業務自動化、法務チェックなど。基本的に「デスクワーク全般」とお考えください。</p></div></div>
+      <div class="faq-item fade-in"><div class="faq-q">会社の情報を預けて大丈夫ですか？</div><div class="faq-a"><p>御社専用のグループで運用し、情報は他のお客様と一切共有しません。NDA締結も可能です。</p></div></div>
+      <div class="faq-item fade-in"><div class="faq-q">対応時間は？</div><div class="faq-a"><p>24時間対応です。毎朝8時には予定・タスク・重要メールのブリーフィングが自動で届きます。</p></div></div>
+      <div class="faq-item fade-in"><div class="faq-q">依頼件数に制限は？</div><div class="faq-a"><p>ありません。何件でもお気軽にどうぞ。</p></div></div>
+      <div class="faq-item fade-in"><div class="faq-q">解約はいつでもOK？</div><div class="faq-a"><p>はい。1ヶ月単位の契約で、いつでも解約可能。違約金もありません。</p></div></div>
+      <div class="faq-item fade-in"><div class="faq-q">AIだけで大丈夫？</div><div class="faq-a"><p>最新AI（Claude）をベースに、17事業を立ち上げた起業家・小松が監修。AIの速度と人間の経営判断力のハイブリッドです。</p></div></div>
     </div>
   </div>
 </section>
@@ -425,32 +364,25 @@ footer{text-align:center;padding:2rem;color:var(--gray400);font-size:.8rem;borde
   <div class="container fade-in">
     <h2>「AIは気になるけど、<br>自分で勉強する<span class="accent">時間はない</span>」<br>そんな社長のためのサービスです。</h2>
     <div class="slots">モニター枠 残り: <span id="slots">20</span>組 / 20組</div>
-    <p>1ヶ月単位の契約。いつでも解約OK、縛りなし。</p>
-    <a href="https://t.me/ken1130" class="cta-btn-white">まずは無料で相談する →</a>
+    <p style="color:var(--text2);margin-bottom:2rem">1ヶ月単位の契約。いつでも解約OK、縛りなし。</p>
+    <a href="https://t.me/ken1130" class="cta-btn" style="font-size:1.1rem;padding:1.1rem 3rem">まずは無料で相談する →</a>
   </div>
 </section>
 
-<footer>
-  <p>© 2026 Kai by Wonderwall Inc.</p>
-</footer>
+<footer><p>© 2026 Kai by Wonderwall Inc.</p></footer>
 
 <script>
 const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target)}})},{threshold:.1});
 document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
-
 document.querySelectorAll('.chat-tab').forEach(tab=>{
   tab.addEventListener('click',()=>{
     document.querySelectorAll('.chat-tab').forEach(t=>t.classList.remove('active'));
     tab.classList.add('active');
     document.querySelectorAll('.chat-content').forEach(c=>c.style.display='none');
-    const t=document.querySelector('.chat-content[data-chat="'+tab.dataset.chat+'"]');
-    if(t)t.style.display='flex';
+    document.querySelector('.chat-content[data-chat="'+tab.dataset.chat+'"]').style.display='flex';
   });
 });
-
-document.querySelectorAll('.faq-q').forEach(q=>{
-  q.addEventListener('click',()=>q.parentElement.classList.toggle('open'));
-});
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
 </script>
 </body>
 </html>
