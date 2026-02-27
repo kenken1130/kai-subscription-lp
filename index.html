@@ -422,7 +422,14 @@ footer{text-align:center;padding:2rem;color:#555;font-size:.8rem;border-top:1px 
   </div>
 </section>
 
-<footer><p>© 2026 Kai by Wonderwall Inc.</p></footer>
+<footer>
+  <div style="margin-bottom:1rem;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap">
+    <a href="tokushoho.html" style="color:#666;font-size:.8rem">特定商取引法に基づく表記</a>
+    <a href="terms.html" style="color:#666;font-size:.8rem">利用規約</a>
+    <a href="privacy.html" style="color:#666;font-size:.8rem">プライバシーポリシー</a>
+  </div>
+  <p>© 2026 Kai by Wonderwall Inc.</p>
+</footer>
 
 <script>
 const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target)}})},{threshold:.1});
